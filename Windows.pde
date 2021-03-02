@@ -68,6 +68,7 @@ void mousePressed(){
   if(focusRef != null){ // If the window is just clicked on
     s = State.MOVE; // Set the state to MOVE
     stack.bringToFront(focusRef); // Bring the clicked window to the front
+    focusRef.setColor(color(random(255), random(255), random(255))); // Color the window randomly when it is in focus
     return; // Exit function
   }
   

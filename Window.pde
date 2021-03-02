@@ -1,6 +1,8 @@
 class Window{ // Class for individual windows
   int x1, y1, x2, y2, wide, tall; // Variables information about the window
   
+  color c = color(255);
+  
   final int BUTTON_HEIGHT = 50, BUTTON_WIDTH = 75; // Magic numbers for the size of the buttons (adjust them if they are too big or small)
   
   Window(int x1, int y1, int x2, int y2){ // Constructor
@@ -30,7 +32,7 @@ class Window{ // Class for individual windows
     
     // Draw the base rectangle
     stroke(0);
-    fill(255);
+    fill(c);
     rect(x1, y1, x2, y2);
     
     // Draw the exit button
@@ -89,5 +91,10 @@ class Window{ // Class for individual windows
       this.wide = abs(x2 - x1);
       this.tall = abs(y2 - y1);
     }
+  }
+  
+  // Set the color of the window for when it is refocused
+  void setColor(color c){
+    this.c = c;
   }
 }
